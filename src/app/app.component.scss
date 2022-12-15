@@ -1,0 +1,46 @@
+:host {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > .menu {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #ffffffdd;
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 5px 0px;
+    z-index: 10;
+    mat-expansion-panel::ng-deep {
+      box-shadow: none;
+      background-color: unset;
+      .mat-expansion-panel-body {
+        padding: 0 0px 0px;
+      }
+      .sub-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        > * {
+          margin: 10px;
+        }
+      }
+    }
+    > * {
+      margin: 10px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div
+  class="layer"
+  *ngFor="let layer of [].constructor(numberOfLayers); let i = index"
+  [style.height.px]="brickHeightInPixels + gapInPixels"
+  [style.transform]="'translateX(-'+(i % 2 === 0 ? brickWidthInPixels / 2 + gapInPixels / 2 : 0)+'px)'"
+>
+  <app-brick
+    class="brick"
+    *ngFor="let brick of [].constructor(numberOfBricksInLayer); let j = index"
+    [width]="brickWidthInPixels"
+    [height]="brickHeightInPixels"
+    [style.border-right-width.px]="j < numberOfBricksInLayer ? gapInPixels : 0"
+    [style.border-top-width.px]="j < numberOfBricksInLayer && i < numberOfLayers ? gapInPixels : 0"
+  ></app-brick>
+</div>
